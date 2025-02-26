@@ -25,9 +25,9 @@ import geopandas as gpd
 import streamlit.components.v1 as components
 
 # --------------------CONFIGURACIÓN DE LA PÁGINA----------------------------#
-st.set_page_config(page_title='Study on AirBnB data from Vancouver city.', layout='wide', page_icon='/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/img/Flag_of_Vancouver.svg.png')
-logo1 = '/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/covlogo-share.png'
-logo2 = '/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/Airbnb_Logo_Bélo-1600x1000.png'
+st.set_page_config(page_title='Study on AirBnB data from Vancouver city.', layout='wide', page_icon='img/Flag_of_Vancouver.svg.png')
+logo1 = 'img/covlogo-share.png'
+logo2 = 'img/Airbnb_Logo_Bélo-1600x1000.png'
 
 # --------------------COLUMNAS----------------------------#
 col1, col2, col3 = st.columns(3)
@@ -484,4 +484,4 @@ with tab7:
     )
     st.plotly_chart(fig_polarity, use_container_width=True)
 
-    st.image('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/wordcloud_vancouver.png')
+    st.image('img/wordcloud_vancouver.png')
