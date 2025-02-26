@@ -117,7 +117,7 @@ with tab1:
 
     vancouver_heatmap = folium.Map(location=[49.2327, -123.1207], tiles="cartodbpositron", zoom_start=11, use_container_width=True)
 
-    HeatMap(data=df[[locations, 'price_winsorized']],
+    HeatMap(data=df[['latitude', 'longitude', 'price_winsorized']],
             radius=20,
             gradient={0: 'green', 0.5: 'yellow', 1: 'red'},
             min_opacity=0.2).add_to(vancouver_heatmap)
