@@ -42,9 +42,9 @@ with col3 :
     st.write('')
 
 # --------------------DATA A UTILIZAR EN TODA LA APP----------------------------#
-df = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/listings_cleaned.csv.gz')
-cal = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/cal.csv.gz')
-reviews_details = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/reviews_details.csv.gz')
+df = pd.read_csv('listings_cleaned.csv.gz')
+cal = pd.read_csv('cal.csv.gz')
+reviews_details = pd.read_csv('reviews_details.csv.gz')
 st.dataframe(df.head(5))
 st.write('Sample of main dataframe.')
 
@@ -70,7 +70,7 @@ with tab1:
     map1 = folium.Map(location=[49.2327, -123.1207], zoom_start=11)
     FastMarkerCluster(data=locations).add_to(map1)
 
-    vancouver_geojson = "/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/neighbourhoods.geojson"
+    vancouver_geojson = "neighbourhoods.geojson"
     vancouver_gdf = gpd.read_file(vancouver_geojson)
     mean_prices = df.loc[df['accommodates'] == 2].groupby('neighbourhood')['price_winsorized'].mean()
 
