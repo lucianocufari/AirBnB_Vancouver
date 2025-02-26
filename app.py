@@ -129,7 +129,7 @@ with tab1:
     st.title("Map of Accommodations Location")
     st_folium(map1, width=700, height=500)
     st.title("Heat Map of Accommodation Prices")
-    st_folium(vancouver_heatmap, returned_objects=[])
+    st_folium(vancouver_heatmap, returned_objects={})
     
 
 # --------------------TAB 2----------------------------#
