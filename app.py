@@ -115,7 +115,7 @@ with tab1:
 
     color_scale = LinearColormap(['green', 'yellow', 'red'], vmin=min_price, vmax=max_price, caption='Price Range')
 
-    vancouver_heatmap = folium.Map(location=[49.2327, -123.1207], zoom_start=11)
+    vancouver_heatmap = folium.Map(location=[49.2327, -123.1207], tiles="cartodbpositron", zoom_start=11, use_container_width=True)
 
     HeatMap(data=df[['latitude', 'longitude', 'price_winsorized']],
             radius=20,
@@ -129,7 +129,7 @@ with tab1:
     st.title("Map of Accommodations Location")
     st_folium(map1, width=700, height=500)
     st.title("Heat Map of Accommodation Prices")
-    st_folium(vancouver_heatmap, returned_objects=[], width=700, height=500)
+    st_folium(vancouver_heatmap, returned_objects=[])
     
 
 # --------------------TAB 2----------------------------#
