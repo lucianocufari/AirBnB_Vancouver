@@ -26,8 +26,8 @@ import streamlit.components.v1 as components
 
 # --------------------CONFIGURACIÓN DE LA PÁGINA----------------------------#
 st.set_page_config(page_title='Study on AirBnB data from Vancouver city.', layout='wide', page_icon='/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/img/Flag_of_Vancouver.svg.png')
-logo1 = '/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/img/covlogo-share.png'
-logo2 = '/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/img/Airbnb_Logo_Bélo-1600x1000.png'
+logo1 = '/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/covlogo-share.png'
+logo2 = '/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/Airbnb_Logo_Bélo-1600x1000.png'
 
 # --------------------COLUMNAS----------------------------#
 col1, col2, col3 = st.columns(3)
@@ -42,9 +42,9 @@ with col3 :
     st.write('')
 
 # --------------------DATA A UTILIZAR EN TODA LA APP----------------------------#
-df = pd.read_csv('/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/listings_cleaned.csv.gz')
-cal = pd.read_csv('/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/cal.csv.gz')
-reviews_details = pd.read_csv('/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/reviews_details.csv.gz')
+df = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/listings_cleaned.csv.gz')
+cal = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/cal.csv.gz')
+reviews_details = pd.read_csv('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/reviews_details.csv.gz')
 st.dataframe(df.head(5))
 st.write('Sample of main dataframe.')
 
@@ -70,7 +70,7 @@ with tab1:
     map1 = folium.Map(location=[49.2327, -123.1207], zoom_start=11)
     FastMarkerCluster(data=locations).add_to(map1)
 
-    vancouver_geojson = "/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/neighbourhoods.geojson"
+    vancouver_geojson = "/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/neighbourhoods.geojson"
     vancouver_gdf = gpd.read_file(vancouver_geojson)
     mean_prices = df.loc[df['accommodates'] == 2].groupby('neighbourhood')['price_winsorized'].mean()
 
@@ -484,4 +484,4 @@ with tab7:
     )
     st.plotly_chart(fig_polarity, use_container_width=True)
 
-    st.image('/Users/lucianocufari/Documents/Bootcamp_Data/programacion/material_curso/Python/airbnb_project/img/wordcloud_vancouver.png')
+    st.image('/Users/lucianocufari/Documents/GitHub/AirBnB_Vancouver/img/wordcloud_vancouver.png')
